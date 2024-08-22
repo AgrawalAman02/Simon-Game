@@ -10,8 +10,11 @@ const colseq = ["red", "green", "blue", "orange"];
 let seqs = [];
 let userseq = [];
 let currTime = new Date().toLocaleTimeString();
-let hcurrTime = "00:00:00";
+let hcurrTime = "-:-:-";
 
+setTimeout(()=>{
+    alert("Welcome to the Simon Game! Here's how to play:\n\n1. Press any key to start the game.\n2. Watch the sequence of colors that light up.\n3. Repeat the sequence by clicking the colored buttons in the same order.\n4. Each level adds a new color to the sequence.\n5. Try to remember the sequence as it gets longer!\n\nGood luck and have fun!");
+},500);
 
 function getMemory (){
     return JSON.parse(localStorage.getItem("scores"));
@@ -79,7 +82,8 @@ const handleLevel = () => {
 document.addEventListener("keypress", () => {
     if (gstatus == false) {
         gstatus = true;
-        restartBtn.style.display = "none"; // Hide the restart button
+        alert("Welcome to the Simon Game! Repeat the sequence of colors to advance. Good luck!");
+        // restartBtn.style.display = "none"; // Hide the restart button
         handleLevel();
     }
 });
@@ -90,7 +94,7 @@ function checkAns(idx) {
             setTimeout(handleLevel, 500);
         }
     } else {
-        h2.innerHTML = `Game Over ! Nice Try! <b>Your Score is ${level}.</b> <br> <hr> Your Highest Score : ${highScore(level)} at ${hcurrTime}.  <br><hr><i>Press any key or restart button to start again!</i>`;
+        h2.innerHTML = `Game Over ! Nice Try! <b>Your Score is ${level}.</b> <br> <hr> Your Highest Score : ${highScore(level)} at ${hcurrTime}.  <br><hr><i>Press any key or Start button to start again!</i>`;
         document.querySelector("body").style.backgroundColor = "red";
         document.querySelector("body").style.color = "white";
         btns.forEach(btn => btn.style.borderColor = "white");
@@ -101,7 +105,7 @@ function checkAns(idx) {
         setTimeout(() => {
             document.querySelector("body").style.backgroundColor = "#e3ce6d40";
             document.querySelector("body").style.color = "black";
-            btns.forEach(btn => btn.style.borderColor = "black");
+            btns.forEach(btn => btn.style.borderColor = "#ced4da");
         }, 200);
 
         restartBtn.style.display = "block"; // Show the restart button after game over
@@ -142,12 +146,12 @@ clearBtn.addEventListener("click", () => {
     showMemory();
 
     // Optionally provide feedback to the user
-    h2.innerText = "Records cleared! Press any key to start a new game.";
+    h2.innerText = "Records cleared! Press any key or Start Button to start a new game.";
 });
 
 // Restart Button Functionality
 restartBtn.addEventListener("click", () => {
     reset();
-    restartBtn.style.display = "none"; // Hide the restart button when the game starts
+    // restartBtn.style.display = "none"; // Hide the restart button when the game starts
     handleLevel();
 });
