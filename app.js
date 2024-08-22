@@ -13,7 +13,7 @@ let currTime = new Date().toLocaleTimeString();
 let hcurrTime = "-:-:-";
 
 setTimeout(()=>{
-    alert("Welcome to the Simon Game! Here's how to play:\n\n1. Press any key to start the game.\n2. Watch the sequence of colors that light up.\n3. Repeat the sequence by clicking the colored buttons in the same order.\n4. Each level adds a new color to the sequence.\n5. Try to remember the sequence as it gets longer!\n\nGood luck and have fun!");
+    alert("Welcome to the Simon Game! Here's how to play:\n\n1. Press start button or any key to start the game.\n2. Watch the sequence of colors that light up.\n3. Repeat the sequence by clicking the colored buttons in the same order.\n4. Each level adds a new color to the sequence.\n5. Try to remember the sequence as it gets longer!\n\nGood luck and have fun!");
 },500);
 
 function getMemory (){
@@ -82,7 +82,6 @@ const handleLevel = () => {
 document.addEventListener("keypress", () => {
     if (gstatus == false) {
         gstatus = true;
-        alert("Welcome to the Simon Game! Repeat the sequence of colors to advance. Good luck!");
         // restartBtn.style.display = "none"; // Hide the restart button
         handleLevel();
     }
