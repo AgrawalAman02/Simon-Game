@@ -122,4 +122,13 @@ h4 {
     }
 }
 
-
+/* Styling for footer */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #f2dabd;
+    color: #5c4c25;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+}
