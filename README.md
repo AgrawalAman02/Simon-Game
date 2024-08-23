@@ -3,8 +3,6 @@
 
 Welcome to the Simon Game! This project is a web-based implementation of the classic memory game "Simon." The game challenges players to remember and repeat increasingly complex sequences of colors.
 
-![Simon Game Screenshot](./Screenshot(580).png)
-
 ## Live Demo
 
 You can play the game live here: [Simon Game](https://agrawalaman02.github.io/Simon-Game/)
