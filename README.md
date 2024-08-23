@@ -3,7 +3,7 @@
 
 Welcome to the Simon Game! This project is a web-based implementation of the classic memory game "Simon." The game challenges players to remember and repeat increasingly complex sequences of colors.
 
-![Simon Game Screenshot](./image.png)
+![Simon Game Screenshot](./Screenshot(580).png)
 
 ## Live Demo
 
