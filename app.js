@@ -12,6 +12,7 @@ let userseq = [];
 let currTime = new Date().toLocaleTimeString();
 let hcurrTime = "-:-:-";
 
+// for helping the new user a alert is generated 
 setTimeout(()=>{
     alert("Welcome to the Simon Game! Here's how to play:\n\n1. Press start button or any key to start the game.\n2. Watch the sequence of colors that light up.\n3. Repeat the sequence by clicking the colored buttons in the same order.\n4. Each level adds a new color to the sequence.\n5. Try to remember the sequence as it gets longer!\n\nGood luck and have fun!");
 },500);
@@ -20,7 +21,7 @@ function getMemory (){
     return JSON.parse(localStorage.getItem("scores"));
 }
 
-let memory = getMemory() || [];
+let memory = getMemory() || [];   // initialise the memory with the empty if new user  or if already played then old scores will be visible....
 function showMemory(){
     record.innerHTML = ""; // Clear existing content
     memory.forEach((score)=>{
@@ -32,15 +33,16 @@ function showMemory(){
 }
 showMemory();
 
-const highScore = (level) => {
-    if (level > hScore) {
+const highScore = (level) => {   // function to calculate the high score
+    if (level >= hScore) {    // updated so that even if someone score same score so the high score would be the latest one!
         hScore = level;
-        hcurrTime = new Date().toLocaleTimeString();
+        hcurrTime = new Date().toLocaleTimeString();    // at the same time it will score the time of high score 
     }
-    currTime = new Date().toLocaleTimeString();
+    currTime = new Date().toLocaleTimeString();   
     return hScore;
 }
 
+// function to add a class flash so that the css can be applied to that system generated flash
 const btnFlash = (btn) => {
     btn.classList.add("flash");
 
@@ -49,6 +51,7 @@ const btnFlash = (btn) => {
     }, 300);
 }
 
+// function to add a class userflash so that the css can be applied when user clicks the blocks
 const userFlash = (btn) => {
     btn.classList.add("userflash");
 
@@ -57,6 +60,7 @@ const userFlash = (btn) => {
     }, 300);
 }
 
+// this function will handle how the level no. to be shown...
 const handleLevel = () => {
     userseq = [];
     level++;
@@ -79,6 +83,7 @@ const handleLevel = () => {
     seqs.push(randColor);
 }
 
+// add a event so that game starts on pressing the key
 document.addEventListener("keypress", () => {
     if (gstatus == false) {
         gstatus = true;
@@ -87,6 +92,7 @@ document.addEventListener("keypress", () => {
     }
 });
 
+// this is the main function , as it will check whether the sequence of color is matching or not?
 function checkAns(idx) {
     if (userseq[idx] === seqs[idx]) {
         if (userseq.length == seqs.length) {
@@ -97,8 +103,8 @@ function checkAns(idx) {
         document.querySelector("body").style.backgroundColor = "red";
         document.querySelector("body").style.color = "white";
         btns.forEach(btn => btn.style.borderColor = "white");
-        memory.push(`Score : ${level} at ${currTime}`);
-        localStorage.setItem("scores", JSON.stringify(memory));
+        memory.push(`Score : ${level} at ${currTime}`);    // pushing the score and the time of score in the memory
+        localStorage.setItem("scores", JSON.stringify(memory));     // pushing it in the local storage
         showMemory();
 
         setTimeout(() => {
@@ -126,6 +132,7 @@ for (let btn of btns) {
     btn.addEventListener("click", btnPress);
 }
 
+// if the game is over when new game starts then everything will be reset...
 function reset() {
     gstatus = false;
     seqs = [];
