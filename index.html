@@ -9,7 +9,7 @@
 <body>
     
     <div class="content">
-        <h2>Simon Game</h2>
+        <span class="heading"><h2>Simon Game</h2></span>
         <h4>👇🏻 Press any key or Start button to start the game 👇🏻 </h4>
 
         <div class="block">
@@ -23,14 +23,28 @@
             <hr>
         </div>
 
-        <button class="restart-btn">Start Game</button> <!-- Restart Button Added -->
-        <button class="clear-btn">Clear Records</button>
-    </div>
+        <button class="restart-btn">   <!-- Restart Button Added -->
+            <span class="start">Start Game</span>
+            <svg width="15px" height="10px" viewBox="0 0 13 10">
+                <path d="M1,5 L11,5"></path>
+                <polyline points="8 1 12 5 8 9"></polyline>
+              </svg>
+        </button> 
+        <button class="clear-btn">
+            <span class="clear">Clear Records</span>
+            <svg width="15px" height="10px" viewBox="0 0 13 10">
+                <path d="M1,5 L11,5"></path>
+                <polyline points="8 1 12 5 8 9"></polyline>
+            </svg>
+        </button>
 
+        
+    </div>
+   
     <footer>
         <p>Created with ❤️ by Aman Agrawal</p>
     </footer>
-    
     <script src="./app.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script> -->
 </body>
 </html>
