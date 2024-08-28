@@ -27,7 +27,7 @@ body {
     justify-content: center;
     align-items: center;
     overflow: hidden;
-
+    
 }
 h2 {
     margin-bottom: 20px;
@@ -74,36 +74,6 @@ h4 {
     padding-top: 10px;
 }
 
-.clear-btn {
-    margin-top: 10px;
-    padding: 8px 16px;
-    background-color: #dc3545;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 14px;
-}
-
-.clear-btn:hover {
-    background-color: #c82333;
-}
-
-.restart-btn {
-    /* display: none; */
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: #20c997;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-.restart-btn:hover {
-    background-color: #38d9a9;
-}
 
 @media (max-width: 600px) {
     .block {
@@ -122,7 +92,7 @@ h4 {
     }
 }
 
-/* Styling for footer */
+
 footer {
     text-align: center;
     padding: 10px;
@@ -132,3 +102,115 @@ footer {
     position: fixed;
     bottom: 0;
 }
+
+/* body{
+    background-color: #e5e5f7;
+    opacity: 0.8;
+    background-image:  radial-gradient(#444cf7 1.85px, transparent 1.85px), radial-gradient(#444cf7 1.85px, #e5e5f7 1.85px);
+    background-size: 74px 74px;
+    background-position: 0 0,37px 37px;
+    
+} */
+
+/* added the highlight to heading h2 */
+
+
+.heading {
+    position: relative;
+    z-index: 1;
+  }
+  
+  .heading::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: -0.25em;
+    right: -0.25em;
+    background-color: #fc2f70;
+    transform-origin: bottom center;
+    transform: scaleY(0.1);
+    transition: all 0.1s ease-in-out;
+  }
+  
+  .heading:hover::before {
+    transform: scaleY(1);
+    background-color: hsla(341, 97%, 59%, 0.75);
+  }
+  
+
+  /* restart button experiment */
+
+  /* From Uiverse.io by alexmaracinaru */ 
+  .restart-btn, .clear-btn {
+    position: relative;
+    margin: auto;
+    padding: 12px 18px;
+    transition: all 0.2s ease;
+    border: none;
+    background: none;
+    cursor: pointer;
+  }
+  .restart-btn{
+    margin-bottom: 1.5%;
+  }
+  .restart-btn:before , .clear-btn::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    border-radius: 50px;
+    background: #caf9be;
+    width: 45px;
+    height: 45px;
+    transition: all 0.3s ease;
+  }
+  .clear-btn::before{
+    background: #f7bbaa;
+  }
+  .restart-btn .start ,.clear-btn .clear {
+    position: relative;
+    font-family: "Ubuntu", sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: #07b916;
+  }
+  .clear-btn .clear{
+    color: #fb1313;
+  }
+  
+  .restart-btn svg , .clear-btn svg {
+    position: relative;
+    top: 0;
+    margin-left: 10px;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke: #07b916;
+    stroke-width: 2;
+    transform: translateX(-5px);
+    transition: all 0.3s ease;
+  }
+  .clear-btn svg{
+    stroke: #fb1313;
+  }
+  
+  .restart-btn:hover:before , .clear-btn:hover:before{
+    width: 100%;
+    background: #caf9be;
+  }
+  .clear-btn:hover:before{
+    width: 100%;
+    background: #f7bbaa;
+  }
+  .restart-btn:hover svg , .clear-btn:hover svg{
+    transform: translateX(0);
+  }
+  
+  .restart-btn:active , .clear-btn:active{
+    transform: scale(0.95);
+  }
+  
