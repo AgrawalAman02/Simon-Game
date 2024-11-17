@@ -24,7 +24,6 @@ You can play the game live here: [Simon Game](https://agrawalaman02.github.io/Si
 4. Each level adds a new color to the sequence.
 5. Try to remember the sequence as it gets longer—the game becomes more challenging as the sequence length increases.
 
-Good luck and have fun!
 
 </hr>
 
@@ -81,3 +80,5 @@ This project was inspired by tutorials from **Shraddha Khapra** and **Technical 
 ## Credits
 
 Created with ❤️ by **Aman Agrawal**
+
+Good luck and have fun!
